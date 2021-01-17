@@ -350,13 +350,81 @@
                     </li>
                 </ul>
             </div>
+
+            <div class="footer-sign">
+                <h3 class="sign-title">Подпишитесь на рассылку</h3>
+                <div class="signs">
+                    
+                    <label for="mail">
+                        <input class="footer-input" type="email" name="mail" id="mail" placeholder="E-mail">
+                    </label>
+                    <button type="submit" class="subscribe-button">
+                        Подписаться
+                    <svg class="icon-send" width="24" height="24">
+                        <use href="./images/sprite.svg#icon-send"></use>
+                    </svg>
+                    </button>
+                </div>
+
+            </div>
         </div>
     </footer>
     <div class="backdrop is-hidden" data-backdrop>
         <div class="modal">
             <button class="modal-button" data-close-modal>&#10006;</button>
+            <div class="modal-form">
+                <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
+                <form action="" class="  js-speaker-form">
+                
+                
+                    <div class="form-field">
+                        <label for="name">Имя</label>
+                        <input type="text" name="name" id="name">
+                    </div>
+                
+                    <div class="form-field">
+                        <label for="tel">Телефон</label>
+                        <input type="tel" name="tel" id="tel">  
+                    </div>
+                
+                    <div class="form-field">
+                        <label for="mail">Почта</label>
+                        <input type="email" name="mail" id="mail">
+                    </div>
+
+                    <div class="form-field">
+                        <label for="comment">Комментарий</label>
+                        <textarea name="comment" id="comment"  rows="10" placeholder="Введите текст"></textarea>
+
+                    </div>
+                </form>
+                <div class="check">
+                    <label for="check" class="check-label">
+                        <input type="checkbox" name="check" id="check">
+                        <span class="checkbox"></span>
+                        Соглашаюсь с рассылкой и принимаю 
+                        <a href="">Условия договора</a>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-button">Отправить</button>
+            </div>
         </div>
     </div>
+
+    <script>
+        (() => {
+            document
+                .querySelector('.js-speaker-form')
+                .addEventListener('submit', e => {
+                    e.preventDefault();
+
+                    new FormData(e.currentTarget).forEach((value, name) =>
+                        console.log(`${name}: ${value}`),
+                    );
+                });
+        })  ();
+    </script>
     <script>
         const refs = {
             openModalBtn: document.querySelector("[data-open-modal]"),
