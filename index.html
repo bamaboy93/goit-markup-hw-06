@@ -374,12 +374,12 @@
             <button class="modal-button" data-close-modal>&#10006;</button>
             <div class="modal-form">
                 <h2 class="modal-title">Оставьте свои данные, мы вам перезвоним</h2>
-                <form action="" class="  js-speaker-form">
+                <form action="" class="js-speaker-form">
                 
                 
                     <div class="form-field">
                         <label for="name">Имя</label>
-                        <input type="text" name="name" id="name">
+                        <input class="form-input" type="text" name="name" id="name">
                         <svg class="field-icon">
                             <use href="./images/sprite.svg#icon-name" width="12" height="12"></use>
                         </svg>
@@ -387,7 +387,7 @@
                 
                     <div class="form-field">
                         <label for="tel">Телефон</label>
-                        <input class="field-input" type="tel" name="tel" id="tel">  
+                        <input class="form-input" type="tel" name="tel" id="tel">  
                         <svg class="field-icon">
                             <use href="./images/sprite.svg#icon-tel" width="13" height="13" ></use>
                         </svg>
@@ -395,7 +395,7 @@
                 
                     <div class="form-field">
                         <label for="mail">Почта</label>
-                        <input type="email" name="mail" id="mail">
+                        <input class="form-input" type="email" name="mail" id="mail">
                         <svg class="field-icon">
                             <use href="./images/sprite.svg#icon-mail" width="15" height="12"></use>
                         </svg>
@@ -403,18 +403,18 @@
 
                     <div class="form-field">
                         <label for="comment">Комментарий</label>
-                        <textarea name="comment" id="comment"  rows="10" placeholder="Введите текст"></textarea>
+                        <textarea class="form-textarea" name="comment" id="comment"  rows="10" placeholder="Введите текст"></textarea>
 
                     </div>
                 </form>
-                <div class="check">
-                    <label for="check" class="check-label">
-                        <input type="checkbox" name="check" id="check">
-                        <span class="checkbox"></span>
-                        Соглашаюсь с рассылкой и принимаю 
+                
+                    <label class="check-label">
+                        <input class="checkbox" type="checkbox" name="check">
+                        <span class="icon"></span>
+                        <span class="checkbox-text">Соглашаюсь с рассылкой и принимаю&nbsp</span> 
                         <a href="/" class="deal">Условия договора</a>
                     </label>
-                </div>
+                
 
                 <button type="submit" class="submit-button">Отправить</button>
             </div>

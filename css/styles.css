@@ -721,25 +721,49 @@ footer {
   flex-direction: column;
   margin-bottom: 10px;
 }
+.form-field:last-child {
+  margin-bottom: 0;
+}
 .form-field label {
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.16;
 }
-.form-field input {
+.form-input {
   height: 40px;
   padding-left: 42px;
 
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.form-input:focus {
+  border-color: var(--accent-color);
+  cursor: pointer;
+  outline: none;
+}
+.form-input:focus + .field-icon,
+.field-icon:focus {
+  fill: var(--accent-color);
+  cursor: pointer;
 }
 
 .form-field textarea {
   height: 120px;
   resize: none;
+
+  margin-bottom: 20px;
+
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 4px;
   padding: 12px 16px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form-textarea:focus {
+  border-color: var(--accent-color);
+  outline: none;
+  cursor: pointer;
 }
 
 .form-field textarea::placeholder {
@@ -749,26 +773,53 @@ footer {
 
   color: rgba(117, 117, 117, 0.5);
 }
+
 .field-icon {
   position: absolute;
   left: 15px;
   top: 50%;
-  width: 15px;
-  height: 15px;
+  width: 18px;
+  height: 18px;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.check {
-  margin-bottom: 28px;
-}
 .check-label {
   display: flex;
   align-items: center;
+  margin-bottom: 28px;
+}
+.checkbox {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+.icon {
+  width: 16px;
+  height: 15px;
+  margin-right: 8px;
+  border: 2px solid var(--title-text-color);
+  border-radius: 4px;
+}
+.checkbox:checked + .icon {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+  background-image: url(../images/iconcheck.svg);
+  background-size: contain;
+  background-origin: border-box;
 }
 .deal {
   display: inline-flex;
-  font-size: 14px;
-  line-height: 1.71;
+
   color: var(--accent-color);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+.checkbox-text {
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 .submit-button {
   display: flex;
