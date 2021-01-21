@@ -718,7 +718,6 @@ footer {
   margin-bottom: 12px;
 }
 .form-field {
-  position: relative;
   display: flex;
   flex-direction: column;
   margin-bottom: 10px;
@@ -775,7 +774,11 @@ footer {
 
   color: rgba(117, 117, 117, 0.5);
 }
-
+.form-field .field-container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
 .field-icon {
   position: absolute;
   left: 15px;
@@ -791,24 +794,17 @@ footer {
   align-items: center;
   margin-bottom: 28px;
 }
-.checkbox {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  padding: 0;
-  overflow: hidden;
-  border: 0;
-  clip: rect(0 0 0 0);
-}
-.icon {
-  width: 16px;
+
+.check-label::before {
+  content: '';
+  width: 15px;
   height: 15px;
   margin-right: 8px;
   border: 2px solid var(--title-text-color);
   border-radius: 4px;
+  display: inline-block;
 }
-.checkbox:checked + .icon {
+.checkbox:checked + .check-label::before {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
   background-image: url(../images/iconcheck.svg);
